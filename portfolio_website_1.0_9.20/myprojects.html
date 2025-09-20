@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Prevents Cache, because this is an often-updated site 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    -->
+
+    <title>My Projects</title>
+    <script>
+        // Immediately invoke a function to set the theme
+        (function () {
+            var localTheme = localStorage.getItem("theme");
+            var styleSheetPath;
+
+            if (localTheme === null) {
+                localStorage.setItem("theme", "light");
+                localTheme = "light"; // reset it for the current page load
+            }
+
+            if (localTheme === "dark") {
+                styleSheetPath = "css/dark.css?V1.0";
+            } else {
+                styleSheetPath = "css/light.css?V1.0";
+            }
+
+            // Dynamically write the stylesheet link tag
+            document.write('<link id="page-style" rel="stylesheet" href="' + styleSheetPath + '">');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- for intext icons: -->
+    <link 
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Browser Icon -->
+    <link rel="shortcut icon" href="images/neutral-icon-64x.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container"> <!-- "utility class" to keep navbar contained -->
+            <div class="logo">
+                <a href="index.html"> <!-- "a means embedded link"-->
+                    <img class="dark" src="images/light-logo.webp" alt="light-logo">
+                    <img class="light" src="images/dark-logo.webp" alt="dark-logo">
+                </a>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="main-menu">
+                <ul> <!-- Unordered List -->
+                    <li> <!-- List Item -->
+                        <a href="aboutme.html">
+                            About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="myprojects.html">
+                            My Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-compact"> <!-- new class btn, compact subclass -->
+                            <!-- <i class="fas fa-user"></i> <OPTIONAL ICON -->
+                            Contact Me 
+                        </a>
+                    </li>
+                    <li> 
+                        <button class="btn btn-empty"> <!-- desktop button -->
+                            <i class="fas fa-sun light"></i><i class="fas fa-moon dark"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="btn btn-empty mobile"> <!-- mobile button -->
+                <i class="fas fa-sun light"></i><i class="fas fa-moon dark"></i>
+            </button>
+            <button class="btn btn-hamburger mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu mobile">
+                <ul> <!-- Unordered List -->
+                    <li> <!-- List Item -->
+                        <a href="aboutme.html">
+                            About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="myprojects.html">
+                            My Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-compact">
+                            Contact Me 
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Contact Card -->
+        <div class="contact-menu">
+            <div class="overlay-container">
+                <div class="contact-card">
+                        <ul class="contact">
+                            <li>
+                                <h1 class="hero-heading text-l">
+                                    Contact Me
+                                </h1>
+                            </li>
+                            <li>
+                                <a class="link" href="mailto:willvanelswyk@gmail.com" target="_blank">
+                                    <i class="fas fa-envelope"></i><i class="fas fa-envelope-open-text"></i>willvanelswyk@gmail.com
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://www.linkedin.com/in/willvanelswyk" target="_blank">
+                                    <i class="fab fa-linkedin"></i>LinkedIn
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link" href="files/Will Van Elswyk Resume.pdf" download>
+                                    <i class="fas fa-file-pdf"></i>My Resume
+                                </a>
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-exit">
+                            <i class="fas fa-x"></i>
+                        </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="hero my-projects">
+        <div class="project">
+            <div class="containersm">
+                <div class="project-content">
+
+                    <h2 class="hero-heading text-xxl">
+                        Willvanelswyk.com
+                    </h2>
+                    <h3 class="hero-heading text-m">
+                        A portfolio website, made from scratch using HTML, CSS, and JS.
+                    </h3>
+                    <p class="project-paragraph">
+                        I've created this website, willvanelswyk.com, as a challenge to
+                        help me learn HTML, CSS, and JS for the first time. Currently,
+                        the site is quite simple, and probably ineffecient, consisting
+                        of several HTML files, two CSS files, and a single JS file. I
+                        host this project with CloudFlare, and redirect the root domain
+                        to the www subdomain. In the
+                        future I intend to rewrite willvanelswyk.com in something like React
+                        or Astro, to add modularity and simplify the code, especially on pages
+                        like this one, where the project elements are repeated.
+                    </p>
+                    <p class="project-paragraph">
+                        In addition to giving me coding experience, this website has been 
+                        an opportunity to learn about UI and UX decision-making, which I love
+                        just as much as the programming. My favorite feature of willvanelswyk.com
+                        is the dark/light mode toggle, located in the navigation bar. Adding the toggle
+                        element helped me learn about HTML-JS interaction, how to store and access
+                        localStorage, CSS display and coloring strategies, and how browsers like Google 
+                        Chrome store site data. Plus, I think it looks cool! While willvanelswyk.com is 
+                        really just a glorified resume, it's a proof of concept that, provides a clean 
+                        and professional experience to the user.
+                    </p>
+                    <div class="project-image extra-wide">
+                        <img src="images/projects/website-code.webp" alt="website-code">
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- End project -->
+        <div class="project">
+            <div class="containersm">
+                <div class="project-content">
+
+                    <h2 class="hero-heading text-xxl">
+                        Gustie Grub Notifications
+                    </h2>
+                    <h3 class="hero-heading text-m">
+                        A python program built to notify users when desired foods are available in the Gustavus cafeteria.
+                    </h3>
+                    <p class="project-paragraph">
+                        In my first year of college, I encountered a problem when it came to using
+                        the campus dining hall: I never knew when my favorite dishes would be available,
+                        and constantly checking the menu was both a nuisance and, mostly, a waste of time.
+                        Gustavus had no system for personalized alerts, so I built my own.
+                    </p>
+                    <p class="project-paragraph">
+                        Gustie Grub is a modular python program that, in three main steps, sends daily personalized
+                        SMS messages describing when and where desired foods can be found in the dining hall.
+                        First, the program scrapes the HTML of the Gustavus menu website and stores each listed
+                        food item in a dictionary, along with mealtime, location, and pricing information.
+                        Second, the set of available foods is compared with locally stored user information,
+                        including phone numbers and preferred dishes. If a match is found, Gustie Grub uses 
+                        an SMTP python library to email (received as a text) a formatted message containing the
+                        day's desired foods, along with relevant information.
+                    </p>
+                    <p class="project-paragraph">
+                        Currently, I run Gustie Grub on my personal computer, with an automatic startup
+                        and a seperate python file which reads and stores date information to ensure that only one
+                        notification is sent per day. In the future, I would like to transfer Gustie Grub to a
+                        server and transition to using a paid SMS API, such as Twilio, to improve reliability for
+                        the user. Furthermore, creating an online portal where users can sign themselves up for
+                        notifications and select their desired dishes would be an exciting next step.
+                    </p>
+                    <div class="project-image wide">
+                        <img src="images/projects/gustie-grub-text.png" alt="gustie-grub-text">
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- End project -->
+        <div class="project">
+            <div class="containersm">
+                <div class="project-content">
+                    <h2 class="hero-heading text-xxl">
+                        Dice Calculator for<i> Risk</i>
+                    </h2>
+                    <h3 class="hero-heading text-m">
+                        A PyQT5 desktop app capable of simulating sequences of battles in the popular boardgame Risk.
+                    </h3>
+                    <p class="project-paragraph">
+                        Risk is a popular strategy game where players battle armies in pursuit of world domination,
+                        and it's one of my favorites. However, anyone who's played the game all the way through knows
+                        the struggle of rolling and counting the same five dice ten, twenty, or even fifty
+                        times in a row. So, to improve my skills in modular programming, array manipulation, and
+                        string formatting, I built a user friendly program that can determine and display the 
+                        outcome of numerous dice rolls at once, according to the rules of Risk. For the sake of 
+                        flexibility, the calculator allows for additional dice, for both the attacker and defender,
+                        and customizable dice shapes.
+                    </p>
+                    <div class="project-image">
+                        <img src="images/projects/risk-dice-calculator.png" alt="risk-dice-calculator">
+                    </div>
+
+                    <p class="project-paragraph">
+                        Originally, the Risk Dice Calculator was a Python program that could only be used
+                        with text input through a console. While this implementation worked, the user experience
+                        was slow, rigid, and boring. To solve this, I learned PyQT5, a Python module for creating
+                        desktop apps, and created my first user interface. I enjoyed the design process, and learned
+                        CSS along the way, to ensure that the calculator was as polished and intuitive as 
+                        possible. Now, I use the Risk Dice Calculator to improve my experience whenever I'm 
+                        playing the boardgame. In the future, I think that this project would be an excellent
+                        way to learn mobile app development, to make the calculator even more accessible!
+                    </p>
+                    <div class="project-image wide">
+                        <img src="images/projects/risk-dice-calculator-gui.png" alt="risk-dice-calculator-gui">
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End project -->
+        <div class="project">
+            <div class="containersm">
+                <div class="project-content">
+                    <h2 class="hero-heading text-xxl">
+                        3D Modeling with Blender
+                    </h2>
+                    <h3 class="hero-heading text-m">
+                        A series of animations and models designed in Blender.
+                    </h3>
+                    <p class="project-paragraph">
+                        Blender is an open-source 3D modeling software, and over the course of several months I
+                        learned the basics from various YouTube tutorials. I've always been interested in digital
+                        art because of its flexibility and range of applications, so I wanted to gain a general
+                        understanding of how 3D design worked. I learned a lot about rendering, textures,
+                        and physics simulations as I modeled everything from a beach house to custom shortcut
+                        icons for my desktop.
+                    </p>
+                    <div class="project-image wide">
+                        <img src="images/projects/blender-phone.webp" alt="blender-phone">
+                    </div>
+                    <div class="project-image">
+                        <img src="images/projects/blender-discord.webp" alt="blender-discord">
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End project -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <ul class="contact">
+                    <li>
+                        <h1 class="text-l">
+                            Contact Me
+                        </h1>
+                    </li>
+                    <li>
+                        <a class="link" href="mailto:willvanelswyk@gmail.com" target="_blank">
+                            <i class="fas fa-envelope"></i><i class="fas fa-envelope-open-text"></i>willvanelswyk@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link" href="https://www.linkedin.com/in/willvanelswyk" target="_blank">
+                            <i class="fab fa-linkedin"></i>LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link" href="files/Will Van Elswyk Resume.pdf" download>
+                            <i class="fas fa-file-pdf"></i>My Resume
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer-image">
+                    <a href="index.html">
+                        <img class="dark" src="images/light-logo.webp" alt="light-logo">
+                        <img class="light" src="images/dark-logo.webp" alt="dark-logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?V1.0"></script>
+    
+</body>
+</html>

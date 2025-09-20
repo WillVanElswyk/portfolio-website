@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Prevents Cache, because this is an often-updated site
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    -->
+
+    <title>About Me</title>
+    <script>
+        // Immediately invoke a function to set the theme
+        (function () {
+            var localTheme = localStorage.getItem("theme");
+            var styleSheetPath;
+
+            if (localTheme === null) {
+                localStorage.setItem("theme", "light");
+                localTheme = "light"; // reset it for the current page load
+            }
+
+            if (localTheme === "dark") {
+                styleSheetPath = "css/dark.css?V1.0";
+            } else {
+                styleSheetPath = "css/light.css?V1.0";
+            }
+
+            // Dynamically write the stylesheet link tag
+            document.write('<link id="page-style" rel="stylesheet" href="' + styleSheetPath + '">');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- for intext icons: -->
+    <link 
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Browser Icon -->
+    <link rel="shortcut icon" href="images/neutral-icon-64x.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container"> <!-- "utility class" to keep navbar contained -->
+            <div class="logo">
+                <a href="index.html"> <!-- "a means embedded link"-->
+                    <img class="dark" src="images/light-logo.webp" alt="light-logo">
+                    <img class="light" src="images/dark-logo.webp" alt="dark-logo">
+                </a>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="main-menu">
+                <ul> <!-- Unordered List -->
+                    <li> <!-- List Item -->
+                        <a href="aboutme.html">
+                            About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="myprojects.html">
+                            My Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-compact"> <!-- new class btn, compact subclass -->
+                            <!-- <i class="fas fa-user"></i> <OPTIONAL ICON -->
+                            Contact Me 
+                        </a>
+                    </li>
+                    <li> 
+                        <button class="btn btn-empty"> <!-- desktop button -->
+                            <i class="fas fa-sun light"></i><i class="fas fa-moon dark"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="btn btn-empty mobile"> <!-- mobile button -->
+                <i class="fas fa-sun light"></i><i class="fas fa-moon dark"></i>
+            </button>
+            <button class="btn btn-hamburger mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu mobile">
+                <ul> <!-- Unordered List -->
+                    <li> <!-- List Item -->
+                        <a href="aboutme.html">
+                            About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="myprojects.html">
+                            My Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-compact">
+                            Contact Me 
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Contact Card -->
+        <div class="contact-menu">
+            <div class="overlay-container">
+                <div class="contact-card">
+                        <ul class="contact">
+                            <li>
+                                <h1 class="hero-heading text-l">
+                                    Contact Me
+                                </h1>
+                            </li>
+                            <li>
+                                <a class="link" href="mailto:willvanelswyk@gmail.com" target="_blank">
+                                    <i class="fas fa-envelope"></i><i class="fas fa-envelope-open-text"></i>willvanelswyk@gmail.com
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://www.linkedin.com/in/willvanelswyk" target="_blank">
+                                    <i class="fab fa-linkedin"></i>LinkedIn
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link" href="files/Will Van Elswyk Resume.pdf" download>
+                                    <i class="fas fa-file-pdf"></i>My Resume
+                                </a>
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-exit">
+                            <i class="fas fa-x"></i>
+                        </button>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="hero about-me">
+        <div class="experience">
+            <div class="containersm">
+                <h1 class="hero-heading text-xxl">
+                    Work Experience
+                </h1>
+                <div class="job">
+                    <div class="job-text">
+                        <h2 class="hero-heading text-l">
+                            E-Commerce Team Member: <span>Whole Foods Market</span>
+                        </h2>
+                        <h3 class="hero-heading text-m">
+                            May 2025 - Present
+                        </h3>
+                        <p class="job-paragraph">
+                            At Whole Foods Market I work with the E-Commerce team to fufill orders with
+                            efficiency and attention to detail. I assist other teams when needed, and
+                            help customers find what they're looking for. Throughout the day, I ensure
+                            that labels and expiration dates are correct and that shelves remain orderly.
+                        </p>
+                    </div>
+                    <div class="job-image">
+                        <img src="images/jobs/whole_foods_logo.png" alt="whole_foods_logo">
+                    </div>
+                </div> <!-- End job -->
+                <div class="job">
+                    <div class="job-text">
+                        <h2 class="hero-heading text-l">
+                            Game Day Operations Staff: <span>The Minnesota Windchill</span>
+                        </h2>
+                        <h3 class="hero-heading text-m">
+                            May 2025 - Present
+                        </h3>
+                        <p class="job-paragraph">
+                            The Winchill are Minnesota's professional ultimate frisbee team.
+                            As a game day operations staff member, I help assemble and take down various 
+                            stadium decorations and booths according to the daily specifications before 
+                            and after games.
+                            During the game, I work in the Kid Zone to ensure that customer needs are met 
+                            and that everyone enjoys a fun and engaging experience.
+                        </p>
+                    </div>
+                    <div class="job-image">
+                        <img src="images/jobs/windchill_logo.webp" alt="windchill_logo">
+                    </div>
+                </div> <!-- End job -->
+                <div class="job">
+                    <div class="job-text">
+                        <h2 class="hero-heading text-l">
+                            Dining Service Employee: <span>Gustavus Adolphus College</span>
+                        </h2>
+                        <h3 class="hero-heading text-m">
+                            Sep 2024 - Present
+                        </h3>
+                        <p class="job-paragraph">
+                            In the Gustavus dining hall I serve and assist customers while keeping food
+                            displays organized and ensuring that equipment and countertops stay clean.
+                            Throughout each shift I restock and prepare food according to the daily menu.
+                        </p>
+                    </div>
+                    <div class="job-image">
+                        <img src="images/jobs/gustavus_logo.png" alt="gustavus_logo">
+                    </div>
+                </div> <!-- End job -->
+                <div class="job">
+                    <div class="job-text">
+                        <h2 class="hero-heading text-l">
+                            Information Technologies Intern: <span>Dao Tech Solutions</span>
+                        </h2>
+                        <h3 class="hero-heading text-m">
+                            Jun 2022 - Sep 2023
+                        </h3>
+                        <p class="job-paragraph">
+                            At Dao Tech I worked onsite with a charter school client as an intern in
+                            the Information Technology department.
+                            Over the course of two summers and the school year, I helped implement a 
+                            new technology inventory system with Google Workspace and a custom website
+                            for data entry. Throughout the process, I registered newly ordered laptops
+                            and transitioned the school from a computer cart system to one where each student
+                            was designated a Chromebook to use at home.
+                        </p>
+                        <p class="job-paragraph">
+                            I learned about troubleshooting techniques and wiring practices while repairing
+                            schoolwide Ethernet, phone, and Wi-Fi access.
+                            I also solved tickets and worked directly with teachers and students to
+                            diagnose, repair, and update various computers, including Chromebooks, Macbooks,
+                            and Dell Laptops, with issues including broken screens, dead batteries, and software
+                            issues.
+                        </p>
+                    </div>
+                    <div class="job-image">
+                        <img src="images/jobs/dao_tech_logo.png" alt="dao_tech_logo">
+                    </div>
+                </div> <!-- End job -->
+            </div> <!-- End container --> 
+        </div> <!-- End work-experience -->
+        <div class="experience">
+            <div class="containersm">
+                <h1 class="hero-heading text-xxl">
+                    Education
+                </h1>
+                <div class="job">
+                    <div class="job-text">
+                        <h2 class="hero-heading text-l">
+                            Gustavus Adolphus College
+                        </h2>
+                        <h3 class="hero-heading text-m">
+                            Sep 2024 - Present
+                        </h3>
+                        <h3 class="hero-heading text-m">
+                            4.0/4.0 GPA
+                        </h3>
+                        <p class="job-paragraph">
+                            Currently, I'm a sophomore computer science major at Gustavus.
+                            Computer Science labs are my favorite classes, but I also love 
+                            to learn about theater, creative writing, business, and my other 
+                            interests. I'm a member of the E. Terry Skone Investment Club on 
+                            campus, where we manage part of the college's endowment to create 
+                            scholarships, and Vice President of the Ultimate Frisbee Club. In 
+                            the second semester of my freshman year, I was the Assistant Director
+                            of our spring play: B, by Guillermo Calderon.
+                        </p>
+                    </div>
+                    <div class="job-image">
+                        <img src="images/jobs/gustavus_logo.png" alt="gustavus_logo">
+                    </div>
+                </div> <!-- End job -->
+                <div class="job">
+                    <div class="job-text">
+                        <h2 class="hero-heading text-l">
+                            Great River School
+                        </h2>
+                        <h3 class="hero-heading text-m">
+                            Sep 2020 - Jun 2024
+                        </h3>
+                        <h3 class="hero-heading text-m">
+                            4.46/4.0 GPA
+                        </h3>
+                        <p class="job-paragraph">
+                            I attended high school at Great River School, where I graduated as valedictorian
+                            with an International Baccalaureate Diploma. During my junior and senior years
+                            I wrote an Extended Essay on the math behind modern RSA cryptography. I was a 
+                            member of the National Honors Society, acted in student-made theater, and played varsity ultimate frisbee.
+                        </p>
+                    </div>
+                    <div class="job-image">
+                        <img src="images/jobs/great_river_logo.webp" alt="great_river_logo">
+                    </div>
+                </div> <!-- End job -->
+            </div> <!-- End container --> 
+        </div> <!-- End education -->
+    </div> <!-- End hero -->
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <ul class="contact">
+                    <li>
+                        <h1 class="text-l">
+                            Contact Me
+                        </h1>
+                    </li>
+                    <li>
+                        <a class="link" href="mailto:willvanelswyk@gmail.com" target="_blank">
+                            <i class="fas fa-envelope"></i><i class="fas fa-envelope-open-text"></i>willvanelswyk@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link" href="https://www.linkedin.com/in/willvanelswyk" target="_blank">
+                            <i class="fab fa-linkedin"></i>LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a class="link" href="files/Will Van Elswyk Resume.pdf" download>
+                            <i class="fas fa-file-pdf"></i>My Resume
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer-image">
+                    <a href="index.html">
+                        <img class="dark" src="images/light-logo.webp" alt="light-logo">
+                        <img class="light" src="images/dark-logo.webp" alt="dark-logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?V1.0"></script>
+    
+</body>
+</html>
